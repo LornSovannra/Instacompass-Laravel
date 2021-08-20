@@ -175,7 +175,7 @@ section{
 }
 
 .username, .bio, .email, .phone_number, .gender{
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
     padding: 1em 0;
@@ -267,6 +267,7 @@ section{
 
 .modal_change_profile{
     display: flex;
+    flex-direction: column;
     align-self: center;
     background: white;
     border-radius: 20px;
@@ -308,6 +309,11 @@ section{
     border-bottom-left-radius: 20px;
 }
 
+.cancel{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
 .upload_photo p{
     color: #4361ee;
 }
@@ -335,5 +341,18 @@ section{
 
     .edit_right_wrapper{
         padding: 0 0 1em 0;
+    }
+    
+    .username, .bio, .email, .phone_number, .gender{
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .username label, .bio label, .email label, .phone_number label, .gender label{
+        margin: 0 0 1em 0;
+    }
+
+    .save_change{
+        margin: 1em 0 0 0;
     }
 }

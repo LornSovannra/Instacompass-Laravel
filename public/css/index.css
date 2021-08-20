@@ -593,4 +593,12 @@
             aside{
                 display: none;
             }
+
+            .post-area-bottom-left p{
+                display: none;
+            }
+
+            .post-area-bottom-right p{
+                display: none;
+            }
         }

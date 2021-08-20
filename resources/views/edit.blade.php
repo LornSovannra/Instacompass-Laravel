@@ -9,6 +9,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
     <link rel="stylesheet" href="./css/edit.css">
     <link rel="stylesheet" href="./css/header.css" type="text/css">
+    <script defer src="./js/edit.js"></script>
 </head>
 <body>
     <main>
@@ -91,45 +92,21 @@
                         <p>Upload Photo</p>
                         <button type="submit" class="btn_upload_photo" hidden name="btn_upload_photo">Upload</button>
                     </div>
-                    <div class="remove_current_photo">
-                        <button type="submit" class="btn_remove_photo" name="btn_remove_photo">Remove Current Photo</button>
-                    </div>
-                    <div class="cancel">
-                        <p>Cancel</p>
-                    </div>
                     @csrf
                     @method("PUT")
                 </form>
+                <form action="{{-- {{ route("remove.profile.image") }} --}}" method="post">
+                    @method("PUT")
+                    {{-- <div class="remove_current_photo">
+                        <button type="submit" class="btn_remove_photo" name="btn_remove_photo">Remove Current Photo</button>
+                    </div> --}}
+                </form>
+                <div class="cancel">
+                    <p>Cancel</p>
+                </div>
             </div>
         </div>
     </main>
 
-    <script>
-    
-        const btn_change_profile = document.querySelector(".btn_change_profile");
-        const cancel = document.querySelector(".cancel");
-        const modal_change_profile_wrapper = document.querySelector(".modal_change_profile_wrapper");
-
-        btn_change_profile.addEventListener("click", () => {
-            modal_change_profile_wrapper.style.display = "flex";
-        })
-
-        cancel.addEventListener("click", () => {
-            modal_change_profile_wrapper.style.display = "none";
-        })
-
-        const upload_photo = document.querySelector(".upload_photo");
-        const input_upload_photo = document.querySelector(".input_upload_photo");
-        const btn_upload_photo = document.querySelector(".btn_upload_photo");
-
-        upload_photo.addEventListener("click", () => {
-            input_upload_photo.click();
-        })
-
-        input_upload_photo.addEventListener("change", () => {
-            btn_upload_photo.click();
-        })
-
-    </script>
 </body>
 </html>

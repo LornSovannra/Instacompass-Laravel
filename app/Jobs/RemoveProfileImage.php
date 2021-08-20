@@ -10,9 +10,8 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
 
-class UpdateProfileImage implements ShouldQueue
+class RemoveProfileImage implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -21,9 +20,10 @@ class UpdateProfileImage implements ShouldQueue
      *
      * @return void
      */
+
     public function __construct($data)
     {
-        $this -> data = $data;
+        $this -> $data;
     }
 
     /**
@@ -32,11 +32,11 @@ class UpdateProfileImage implements ShouldQueue
      * @return void
      */
 
-    public function handle(Request $request)
+    public function handle()
     {
-        $user =  User::findOrFail(Auth::id());
+        $user = User::findOrFail(Auth::id());
 
-        $user -> user_profile_image = $request -> user_profile_image -> store("users_profile_images");
+        $user -> user_profile_image = "users_profile_images/default_profile_image.png";
 
         $user -> save();
 

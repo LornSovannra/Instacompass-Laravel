@@ -10,4 +10,9 @@ class Post extends Model
     use HasFactory;
 
     public $timestamps = false;
+
+    public function posts()
+    {
+        return $this -> hasMany(User::class);
+    }
 }
