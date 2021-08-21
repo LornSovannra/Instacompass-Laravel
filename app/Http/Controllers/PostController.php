@@ -56,13 +56,4 @@ class PostController extends Controller
 
         return redirect("/");
     }
-
-    /* public function findAction(\Illuminate\Http\Request $request) {
-        if ($request->has('update.profile.image')) {
-            return $this->dispatch(new \App\Jobs\UpdateProfileImage($request));
-        } else if ($request->has('remove.profile.image')) {
-            return $this->dispatch(new \App\Jobs\RemoveProfileImage($request));
-        }
-        return 'no action found';
-    } */
 }

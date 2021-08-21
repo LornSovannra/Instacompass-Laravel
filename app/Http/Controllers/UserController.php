@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -58,7 +59,9 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $auth = Auth::user();
 
-        return view("user-post-profile", ['user' => $user, "auth" => $auth]);
+        $posts = DB::select('SELECT * FROM posts WHERE user_post_id = ?', [$id]);
+
+        return view("user-post-profile", ['user' => $user, "auth" => $auth, "posts" => $posts]);
     }
 
     public function findAction(\Illuminate\Http\Request $request) {

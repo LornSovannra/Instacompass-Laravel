@@ -123,6 +123,7 @@ main{
     display: flex;
     margin: 2em 0;
     padding: 0 0 3em 0;
+    width: 100%;
     border-bottom: 1px solid gray;
 }
 
@@ -137,8 +138,9 @@ main{
 }
 
 .profile_right{
+    display: flex;
+    flex-direction: column;
     margin: 0 0 0 5em;
-    max-width: 370px;
 }
 
 .profile_right_top{
@@ -151,49 +153,9 @@ main{
     font-family: sans-serif;
 }
 
-.edit_profile a{
-    color: white;
-    text-decoration: none;
-}
-
-.edit_profile{
-    display: flex;
-    align-items: center;
-    background: #073b4c;
-    color: white;
-    text-decoration: none;
-    border-radius: 20px;
-    padding: .3em 1em;
-    margin: 0 2em;
-    border: 1px solid #073b4c;
-    transition: .3s;
-}
-
-.edit_profile div{
-    display: flex;
-}
-
-.edit_profile div p{
-    margin: 0 .5em 0 0;
-}
-
-.edit_profile a{
-    margin: 0 .5em 0 0;
-}
-
-.edit_profile:hover{
-    background: white;
-    border: 1px solid #073b4c;
-    color: #073b4c;
-}
-
-.edit_profile a:hover{
-    color: #073b4c;
-}
-
 .profile_details{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 0 0 1.5em 0;
 }
 
@@ -205,4 +167,158 @@ main{
     font-weight: bold;
     font-size: 1em;
     margin: 0 0 1em 0;
+}
+
+.content_wrapper{
+    /* margin: 0 0 2em 0; */
+    padding: 0 0 2em 0;
+}
+
+.content{
+    border: 1px solid gray;
+    border-radius: 3px;
+    background: white;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.card-top{
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 1em 0 1em;
+}
+
+.card-top-right a{
+    color: black;
+}
+
+.card-top-left{
+    display: flex;
+    align-items: center;
+}
+
+.card-top-right{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card-top-left img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 0 .5em 0 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-mid img{
+    width: 100%;
+    margin: .5em 0;
+}
+
+.card-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 1em 0;
+}
+
+.card-bottom-left{
+    align-items: center;
+    margin: 0 0 0 .7em;
+}
+
+.card-bottom-left .fa-heart,
+.card-bottom-left .fa-comment,
+.card-bottom-left .fa-telegram-plane{
+    font-size: 25px;
+    cursor: pointer;
+    margin-right: .5em;
+}
+
+.card-bottom-right .fa-bookmark{
+    margin: 0 .7em 0 0;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.like{
+    margin: 0 0 .7em 1em;
+}
+
+.caption-date{
+    margin: 1em 0 .7em 1em;
+}
+
+.caption{
+    margin: 0 0 .7em 0;
+}
+
+.date p{
+    font-size: .7em;
+    font-weight: lighter;
+    margin: 0 0 2em 0;
+}
+
+.comment{
+    border-top: 1px solid gray;
+}
+
+.comment-wrapper{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 7% 86% 7%;
+    margin: 1em;
+}
+
+.comment-wrapper .fa-smile
+{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.comment-wrapper input{
+    height: 2em;
+    border: none;
+    outline: none;
+}
+
+.comment-wrapper p{
+    color: #0077b6;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 992px)
+{
+    .content{
+        margin: 0 1em;
+    }
+
+    .profile_wrapper{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .search-wrapper{
+        display: none;
+    }
+
+    .profile{
+        flex-direction: column;
+        text-align: center;
+        margin: 2em 1em;
+    }
+
+    .profile_right{
+        margin: 1em 0 0 0;
+    }
+
+    .profile_right_top{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+    }
 }

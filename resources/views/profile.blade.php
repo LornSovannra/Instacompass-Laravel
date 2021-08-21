@@ -35,10 +35,10 @@
                             </a>
                         </div>
                         <div class="profile_details">
-                            <div class="post_details">
+                            <div class="post_details" style="margin: 0 1em 0 0">
                                 <p>{{ $auth -> user_post }} posts</p>
                             </div>
-                            <div class="follower_details">
+                            <div class="follower_details" style="margin: 0 1em 0 0">
                                 <p>{{ $auth -> user_follower }} followers</p>
                             </div>
                             <div class="following_details">
