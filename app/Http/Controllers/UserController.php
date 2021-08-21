@@ -6,7 +6,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
