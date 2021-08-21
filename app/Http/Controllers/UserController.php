@@ -27,6 +27,11 @@ class UserController extends Controller
         $user -> user_phone_number = $request -> user_phone_number;
         $user -> user_gender = $request -> user_gender;
 
+        DB::table('posts')  -> where("user_post_id", $user_id)
+                            -> update([
+                                "user_post_name" => $request -> user_name,
+                            ]);
+
         $user -> save();
 
         return redirect("edit");
@@ -34,7 +39,16 @@ class UserController extends Controller
 
     public function UpdateProfileImage(Request $request)
     {
-        $user =  User::findOrFail(Auth::id());
+        $auth_id = Auth::id();
+
+        $user =  User::findOrFail($auth_id);
+
+        /* $user_post = DB::select('SELECT user_post_profile_image FROM posts WHERE user_post_id = ?', [$auth_id]); */
+
+        DB::table('posts')  -> where("user_post_id", $auth_id)
+                            -> update([
+                                "user_post_profile_image" => $request -> user_profile_image -> store("users_profile_images")
+                            ]);
 
         $user -> user_profile_image = $request -> user_profile_image -> store("users_profile_images");
 
@@ -59,17 +73,17 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $auth = Auth::user();
 
-        $posts = DB::select('SELECT * FROM posts WHERE user_post_id = ?', [$id]);
+        $posts = DB::select('SELECT * FROM posts WHERE user_post_id = ? ORDER BY id DESC', [$id]);
 
         return view("user-post-profile", ['user' => $user, "auth" => $auth, "posts" => $posts]);
     }
 
-    public function findAction(\Illuminate\Http\Request $request) {
+    /* public function findAction(\Illuminate\Http\Request $request) {
         if ($request->has('update.profile.image')) {
             return $this->dispatch(new \App\Jobs\UpdateProfileImage($request));
         } else if ($request->has('remove.profile.image')) {
             return $this->dispatch(new \App\Jobs\RemoveProfileImage($request));
         }
         return 'no action found';
-    }
+    } */
 }
