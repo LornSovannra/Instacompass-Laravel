@@ -49,7 +49,7 @@
                         <!-- Content -->
                         <div class="content">
                             <div class="card-top">
-                                <a style="text-decoration: none; color: black;" href="{{-- {{ route("user.post.profile", $post -> user_post_name) }} --}}">
+                                <a style="text-decoration: none; color: black;" href="{{ route("user.post.profile", $post -> user_post_id) }}">
                                     <div class="card-top-left">
                                         <img src="./{{ $post -> user_post_profile_image }}" alt="">
                                         <p>{{ $post -> user_post_name }}</p>

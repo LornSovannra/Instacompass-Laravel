@@ -53,13 +53,13 @@ class UserController extends Controller
         return redirect("edit") -> with("message", "Profile Remove");
     } */
 
-    /* public function UserPostProfile($name)
+    public function UserPostProfile($id)
     {
-        $user = User::findOrFail($name);
+        $user = User::findOrFail($id);
         $auth = Auth::user();
 
         return view("user-post-profile", ['user' => $user, "auth" => $auth]);
-    } */
+    }
 
     public function findAction(\Illuminate\Http\Request $request) {
         if ($request->has('update.profile.image')) {

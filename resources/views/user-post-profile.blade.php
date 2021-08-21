@@ -7,6 +7,8 @@
     <title>Profile | Instacompass</title>
     <link rel="icon" href="https://www.pinclipart.com/picdir/big/323-3231916_mary-kay-official-site-instagram-iphone-app-png.png">
     <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+    {{-- <link rel="stylesheet" href="./css/user_post_profile.css">
+    <link rel="stylesheet" href="./css/header.css" type="text/css"> --}}
 
     <style>
         *{
@@ -25,10 +27,6 @@
         .header-wrapper{
             max-width: 1400px;
             margin: 0 auto;
-            /* display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            align-items: center;
-            text-align: center; */
             display: flex;
             justify-content: space-evenly;
             align-items: center;
@@ -128,7 +126,7 @@
             background: whitesmoke;
             height: 100vh;
         }
-        
+
         .profile_wrapper{
             max-width: 940px;
             margin: 0 auto;
@@ -161,6 +159,7 @@
             align-items: center;
             margin: 0 0 1em 0;
         }
+
         .profile_name p{
             font-size: 1.5em;
             font-family: sans-serif;
@@ -249,19 +248,19 @@
                         </div>
                         <div class="profile_details">
                             <div class="post_details">
-                                <p>{{ $user -> user_post }} posts</p>
+                                <p>{{-- {{ $user -> user_post }} --}} posts</p>
                             </div>
                             <div class="follower_details">
-                                <p>{{ $user -> user_follower }} followers</p>
+                                <p>{{-- {{ $user -> user_follower }} --}} followers</p>
                             </div>
                             <div class="following_details">
-                                <p>{{ $user -> user_following }} following</p>
+                                <p>{{-- {{ $user -> user_following }} --}} following</p>
                             </div>
                         </div>
                         <div>
                             <div class="user_bio">
                                 <p>About Me</p>
-                                <p>{{ $user -> user_bio }}</p>
+                                <p>{{-- {{ $user -> user_bio }} --}}</p>
                             </div>
                         </div>
                     </div>
