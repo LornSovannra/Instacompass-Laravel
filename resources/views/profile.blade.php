@@ -7,6 +7,7 @@
     <title>Profile | Instacompass</title>
     <link rel="icon" href="https://www.pinclipart.com/picdir/big/323-3231916_mary-kay-official-site-instagram-iphone-app-png.png">
     <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+    <script defer src="./js/header.js"></script>
 
     <link rel="stylesheet" href="./css/profile.css">
     <link rel="stylesheet" href="./css/header.css" type="text/css">

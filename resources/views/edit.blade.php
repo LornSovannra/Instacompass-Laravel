@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/edit.css">
     <link rel="stylesheet" href="./css/header.css" type="text/css">
     <script defer src="./js/edit.js"></script>
+    <script defer src="./js/header.js"></script>
 </head>
 <body>
     <main>
