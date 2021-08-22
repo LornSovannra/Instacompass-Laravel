@@ -49,7 +49,7 @@ class UserController extends Controller
 
         
 
-        $user -> user_profile_image = $request -> user_profile_image -> store("users_profile_images");
+        /* $user -> user_profile_image = $request -> user_profile_image -> store("users_profile_images"); */
 
             $this->validate($request, [
                 'user_profile_image' => 'image|mimes:jpeg,png,jpg|max:10240|required',
