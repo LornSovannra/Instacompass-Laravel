@@ -81,6 +81,8 @@ class UserController extends Controller
                 Cloudder::delete($image_public_id_exist);
             } */
 
+            $user -> user_profile_image = $image_url;
+
             DB::table('posts')  -> where("user_post_id", $auth_id)
                             -> update([
                                 "user_post_profile_image" => $image_url/* $request -> user_profile_image -> store("users_profile_images") */
