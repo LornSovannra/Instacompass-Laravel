@@ -47,10 +47,7 @@ class UserController extends Controller
 
         /* $user_post = DB::select('SELECT user_post_profile_image FROM posts WHERE user_post_id = ?', [$auth_id]); */
 
-        DB::table('posts')  -> where("user_post_id", $auth_id)
-                            -> update([
-                                "user_post_profile_image" => $request -> user_profile_image -> store("users_profile_images")
-                            ]);
+        
 
         $user -> user_profile_image = $request -> user_profile_image -> store("users_profile_images");
 
@@ -83,6 +80,11 @@ class UserController extends Controller
                 $image_public_id_exist = User::select('public_id')->where('id', Auth::id())->get();
                 Cloudder::delete($image_public_id_exist);
             } */
+
+            DB::table('posts')  -> where("user_post_id", $auth_id)
+                            -> update([
+                                "user_post_profile_image" => $image_url/* $request -> user_profile_image -> store("users_profile_images") */
+                            ]);
 
             $user = User::find(Auth::id());
             $user->public_id = $public_id;
