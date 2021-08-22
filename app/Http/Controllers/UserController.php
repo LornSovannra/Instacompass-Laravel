@@ -47,7 +47,7 @@ class UserController extends Controller
 
         /* $user_post = DB::select('SELECT user_post_profile_image FROM posts WHERE user_post_id = ?', [$auth_id]); */
 
-        $user -> user_profile_image = $request -> user_profile_image /* -> store("users_profile_images") */;
+        /* $user -> user_profile_image = $request -> user_profile_image -> store("users_profile_images"); */
 
             $this->validate($request, [
                 'user_profile_image' => 'max:10240|required',
@@ -78,6 +78,8 @@ class UserController extends Controller
                 $image_public_id_exist = User::select('public_id')->where('id', Auth::id())->get();
                 Cloudder::delete($image_public_id_exist);
             } */
+
+            $user -> user_profile_image = $image_url;
 
             DB::table('posts')  -> where("user_post_id", $auth_id)
                             -> update([
