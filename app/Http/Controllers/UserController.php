@@ -50,7 +50,7 @@ class UserController extends Controller
         /* $user -> user_profile_image = $request -> user_profile_image -> store("users_profile_images"); */
 
             $this->validate($request, [
-                'user_profile_image' => 'max:10240|required',
+                'user_profile_image' => 'image|mimes:jpeg,png,jpg,JPEG,PNG,JPG|max:10240|required',
             ]);
 
 
