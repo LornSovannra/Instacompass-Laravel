@@ -22,7 +22,7 @@
             <div class="profile_wrapper">
                 <div class="profile">
                     <div class="profile_left">
-                        <img src="./{{ $auth -> user_profile_image }}" alt="">
+                        <img src="{{ $auth -> user_profile_image }}" alt="">
                     </div>
                     <div class="profile_right">
                         <div class="profile_right_top">

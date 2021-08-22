@@ -52,7 +52,7 @@
                             <div class="card-top">
                                 <a style="text-decoration: none; color: black;" href="{{ route("user.post.profile", $post -> user_post_id) }}">
                                     <div class="card-top-left">
-                                        <img src="./{{ $post -> user_post_profile_image }}" alt="">
+                                        <img src="{{ $post -> user_post_profile_image }}" alt="">
                                         <p>{{ $post -> user_post_name }}</p>
                                     </div>
                                 </a>
@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                             <div class="card-mid">
-                                <img src="./{{ $post -> user_post_image }}" alt="">
+                                <img src="{{ $post -> user_post_image }}" alt="">
                             </div>
                             <div class="card-bottom">
                                 <div class="card-bottom-left">
@@ -103,7 +103,7 @@
                     <div class="profile">
 
                         <div class="profile_image">
-                            <img src="./{{ $auth -> user_profile_image }}" alt="">
+                            <img src="{{ $auth -> user_profile_image }}" alt="">
                         </div>
     
                         <div class="profile_name">

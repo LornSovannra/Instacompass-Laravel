@@ -2,6 +2,9 @@
 
 return [
 
+    JD\Cloudder\CloudderServiceProvider::class,
+    'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

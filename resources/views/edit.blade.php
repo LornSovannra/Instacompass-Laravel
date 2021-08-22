@@ -46,7 +46,7 @@
 
                         <div class="edit_right_wrapper">
                             <div class="edit_profile">
-                                <img src="./{{ $auth -> user_profile_image }}" alt="">
+                                <img src="{{ $auth -> user_profile_image }}" alt="">
                                 <div class="change_profile">
                                     <h2>{{ $auth -> name }}</h2>
                                     <p class="btn_change_profile">Change Profile</p>
