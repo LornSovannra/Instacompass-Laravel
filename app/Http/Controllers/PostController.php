@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use JD\Cloudder\Facades\Cloudder;
 
 class PostController extends Controller
@@ -22,7 +23,9 @@ class PostController extends Controller
     {
         $auth = Auth::user();
 
-        return view("profile", ['auth' => $auth]);
+        $posts = DB::select('SELECT * FROM posts WHERE user_post_id = ? ORDER BY id DESC', [Auth::id()]);
+
+        return view("profile", ['auth' => $auth, "posts" => $posts]);
     }
 
     public function Edit()

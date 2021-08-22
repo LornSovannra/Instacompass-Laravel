@@ -199,7 +199,7 @@ main{
 
 .profile_details{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     margin: 0 0 1.5em 0;
 }
 
@@ -213,8 +213,126 @@ main{
     margin: 0 0 1em 0;
 }
 
+.content_wrapper{
+    padding: 0 0 2em 0;
+}
+
+.content{
+    border: 1px solid gray;
+    border-radius: 3px;
+    background: white;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.card-top{
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 1em 0 1em;
+}
+
+.card-top-right a{
+    color: black;
+}
+
+.card-top-left{
+    display: flex;
+    align-items: center;
+}
+
+.card-top-right{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card-top-left img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 0 .5em 0 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-mid img{
+    width: 100%;
+    margin: .5em 0;
+}
+
+.card-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 1em 0;
+}
+
+.card-bottom-left{
+    align-items: center;
+    margin: 0 0 0 .7em;
+}
+
+.card-bottom-left .fa-heart,
+.card-bottom-left .fa-comment,
+.card-bottom-left .fa-telegram-plane{
+    font-size: 25px;
+    cursor: pointer;
+    margin-right: .5em;
+}
+
+.card-bottom-right .fa-bookmark{
+    margin: 0 .7em 0 0;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.like{
+    margin: 0 0 .7em 1em;
+}
+
+.caption-date{
+    margin: 1em 0 .7em 1em;
+}
+
+.caption{
+    margin: 0 0 .7em 0;
+}
+
+.date p{
+    font-size: .7em;
+    font-weight: lighter;
+    margin: 0 0 2em 0;
+}
+
+.comment{
+    border-top: 1px solid gray;
+}
+
+.comment-wrapper{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 7% 86% 7%;
+    margin: 1em;
+}
+
+.comment-wrapper .fa-smile
+{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.comment-wrapper input{
+    height: 2em;
+    border: none;
+    outline: none;
+}
+
 @media screen and (max-width: 992px)
 {
+    .content{
+        margin: 0 1em;
+    }
+
     .profile_wrapper{
         display: flex;
         justify-content: center;
@@ -240,5 +358,9 @@ main{
         justify-content: center;
         text-align: center;
         align-content: center;
+    }
+
+    .profile_details{
+        justify-content: center;
     }
 }

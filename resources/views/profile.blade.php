@@ -54,6 +54,60 @@
                     </div>
                 </div>
             </div>
+
+            @foreach ($posts as $post)
+                <!-- Content -->
+                <div class="content_wrapper">
+                    <div class="content">
+                        <div class="card-top">
+                            <a style="text-decoration: none; color: black;" href="{{-- {{ route("user.post.profile", $post -> user_post_id) }} --}}">
+                                <div class="card-top-left">
+                                    <img src="{{ $post -> user_post_profile_image }}" alt="">
+                                    <p>{{ $post -> user_post_name }}</p>
+                                </div>
+                            </a>
+                            <div class="card-top-right">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </div>
+                        </div>
+                        <div class="caption-date">
+                            <div class="date">
+                                <p>{{ $post -> user_post_date }} {{-- MINUTES AGO --}}</p>
+                            </div>
+                            <div class="caption">
+                                <p>{{ $post -> user_post_caption }}</p>
+                            </div>
+                        </div>
+                        <div class="card-mid">
+                            <img src="{{ $post -> user_post_image }}" alt="">
+                        </div>
+                        <div class="card-bottom">
+                            <div class="card-bottom-left">
+                                <div>
+                                    <i class="far fa-heart"></i>
+                                    <i class="far fa-comment"></i>
+                                    <i class="fab fa-telegram-plane"></i>
+                                </div>
+                            </div>
+                            <div class="card-bottom-right">
+                                <i class="far fa-bookmark"></i>
+                            </div>
+                        </div>
+                        <div class="like">
+                            <p>999 likes</p>
+                        </div>
+    
+                        <div class="comment">
+                            <div class="comment-wrapper">
+                                <i class="far fa-smile"></i>
+                                <input type="text" placeholder="Add a comment...">
+                                <p>Post</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Content -->
+            @endforeach
         </section>
     </main>
 </body>
