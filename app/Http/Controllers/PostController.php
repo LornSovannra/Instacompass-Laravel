@@ -34,11 +34,11 @@ class PostController extends Controller
 
     public function Post(Request $request)
     {
-            /* $this->validate($request, [
+            $this->validate($request, [
                 'user_post_image' => 'image|mimes:jpeg,png,jpg|max:10240|required',
             ], [
                 "user_post_image.regex" => "Please upload photo.",
-            ]); */
+            ]);
 
             if($request->file('user_post_image') != null)
             {
