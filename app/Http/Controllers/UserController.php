@@ -49,10 +49,9 @@ class UserController extends Controller
 
         /* $user -> user_profile_image = $request -> user_profile_image -> store("users_profile_images"); */
 
-            $this->validate($request, [
+           /*  $this->validate($request, [
                 'user_profile_image' => 'image|mimes:jpeg,png,jpg,JPEG,PNG,JPG|max:10240|required',
-            ]);
-
+            ]); */
 
             $image_name = $request->file('user_profile_image')->getRealPath();
             //the upload method handles the uploading of the file and can accept attributes to define what should happen to the image
