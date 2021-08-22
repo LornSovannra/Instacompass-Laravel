@@ -47,7 +47,7 @@ class UserController extends Controller
 
         /* $user_post = DB::select('SELECT user_post_profile_image FROM posts WHERE user_post_id = ?', [$auth_id]); */
 
-        $user -> user_profile_image = $request -> user_profile_image -> store("users_profile_images");
+        $user -> user_profile_image = $request -> user_profile_image /* -> store("users_profile_images") */;
 
             $this->validate($request, [
                 'user_profile_image' => 'max:10240|required',
