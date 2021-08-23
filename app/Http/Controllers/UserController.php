@@ -94,16 +94,22 @@ class UserController extends Controller
         return redirect("edit"/* , ["auth" => $auth] */);
     }
 
-    /* public function RemoveProfileImage(Request $request)
+    public function RemoveProfileImage(Request $request)
     {
+        $auth_id = Auth::id();
         $user = User::findOrFail(Auth::id());
 
         $user -> user_profile_image = "users_profile_images/default_profile_image.png";
 
+        DB::table('posts')  -> where("user_post_id", $auth_id)
+                            -> update([
+                                "user_post_profile_image" => 'users_profile_images/default_profile_image.png'/* $request -> user_profile_image -> store("users_profile_images") */
+                            ]);
+
         $user -> save();
 
-        return redirect("edit") -> with("message", "Profile Remove");
-    } */
+        return redirect("edit");
+    }
 
     public function UserPostProfile($id)
     {

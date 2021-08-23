@@ -5,8 +5,16 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('index');
+    return redirect('/');
 })->name('index');
+
+Route::get("/home", function(){
+    return redirect("/");
+});
+
+Route::get("/index", function(){
+    return redirect("/");
+});
 
 Route::get("/", [PostController::class, "Home"]) -> middleware("auth") -> name("home");
 Route::get("/profile", [PostController::class, "Profile"]) -> middleware("auth") -> name("profile");
