@@ -59,7 +59,7 @@ class UserController extends Controller
             //Also note you could set a default height for all the images and Cloudinary does a good job of handling and rendering the image.
             Cloudder::upload($image_name, null, array(
                 "folder" => "users_profile_images",  "overwrite" => FALSE,
-                "resource_type" => "image", "responsive" => TRUE, /* "transformation" => array("quality" => "1920", "width" => "250", "height" => "250", "crop" => "scale") */
+                "resource_type" => "image", "responsive" => TRUE, "transformation" => array("quality" => "90"/* , "width" => "250", "height" => "250", "crop" => "scale" */)
             ));
 
             //Cloudinary returns the publicId of the media uploaded which we'll store in our database for ease of access when displaying it.
@@ -70,7 +70,7 @@ class UserController extends Controller
             $height = 1024; */
 
             //The show method returns the URL of the media file on Cloudinary
-            $image_url = Cloudder::show(Cloudder::getPublicId()/* , ["width" => $width, "height" => $height, "quality" => 1920, "secure" => "true"] */);
+            $image_url = Cloudder::show(Cloudder::getPublicId(), [/* "width" => $width, "height" => $height,  */"quality" => 90, "secure" => "true"]);
 
             //In a situation where the user has already uploaded a file we could use the delete method to remove the media and upload a new one.
             /* if ($public_id != null) {

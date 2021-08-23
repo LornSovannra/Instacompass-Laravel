@@ -52,7 +52,7 @@ class PostController extends Controller
                 //Also note you could set a default height for all the images and Cloudinary does a good job of handling and rendering the image.
                 Cloudder::upload($image_name, null, array(
                     "folder" => "users_post_images",  "overwrite" => FALSE,
-                    "resource_type" => "image", /* "responsive" => TRUE, "transformation" => array( *//* "quality" => "1920", */ /* "width" => "250", "height" => "250", */ /* "crop" => "scale" */
+                    "resource_type" => "image", "responsive" => TRUE, "transformation" => array("quality" => "90", /* "width" => "250", "height" => "250", */ /* "crop" => "scale" */)
                 ));
     
                 //Cloudinary returns the publicId of the media uploaded which we'll store in our database for ease of access when displaying it.
