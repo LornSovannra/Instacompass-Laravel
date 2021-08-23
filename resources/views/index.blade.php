@@ -53,7 +53,10 @@
                                 <a style="text-decoration: none; color: black;" href="{{ route("user.post.profile", $post -> user_post_id) }}">
                                     <div class="card-top-left">
                                         <img src="{{ $post -> user_post_profile_image }}" alt="">
-                                        <p>{{ $post -> user_post_name }}</p>
+                                        <div>
+                                            <p>{{ $post -> user_post_name }}</p>
+                                            <p style="color: gray; font-size: 10px;">{{ $post -> user_post_date }} {{-- MINUTES AGO --}}</p>
+                                        </div>
                                     </div>
                                 </a>
                                 <div class="card-top-right">
@@ -61,10 +64,9 @@
                                 </div>
                             </div>
                             <div class="caption-date">
-                                <div class="date">
-                                    <p>{{ $post -> user_post_date }} {{-- MINUTES AGO --}}</p>
-                                </div>
-                                <div class="caption">
+                                {{-- <div class="date">
+                                </div> --}}
+                                <div class="caption" style="padding: 1em 0 0 0;">
                                     <p>{{ $post -> user_post_caption }}</p>
                                 </div>
                             </div>
