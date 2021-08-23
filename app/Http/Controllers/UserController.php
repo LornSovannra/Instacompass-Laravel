@@ -110,9 +110,17 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $auth = Auth::user();
 
-        $posts = DB::select('SELECT * FROM posts WHERE user_post_id = ? ORDER BY id DESC', [$id]);
+        if($id == Auth::id())
+        {
+            $posts = DB::select('SELECT * FROM posts WHERE user_post_id = ? ORDER BY id DESC', [$id]);
 
-        return view("user-post-profile", ['user' => $user, "auth" => $auth, "posts" => $posts]);
+            return redirect("profile");
+        }else{
+            $posts = DB::select('SELECT * FROM posts WHERE user_post_id = ? ORDER BY id DESC', [$id]);
+    
+            return view("user-post-profile", ['user' => $user, "auth" => $auth, "posts" => $posts]);
+        }
+
     }
 
     /* public function findAction(\Illuminate\Http\Request $request) {
