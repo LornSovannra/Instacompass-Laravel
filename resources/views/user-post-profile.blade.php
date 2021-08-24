@@ -109,7 +109,7 @@
                         <div class="card-top">
                             <a style="text-decoration: none; color: black;" href="{{-- {{ route("user.post.profile", $post -> user_post_id) }} --}}">
                                 <div class="card-top-left">
-                                    @if ($post -> user_profile_image == "users_profile_images/default_profile_image.png")
+                                    @if ($post -> user_post_profile_image == "users_profile_images/default_profile_image.png")
                                     
                                         <img src="../{{ $post -> user_post_profile_image }}" alt="">
                                     @else
