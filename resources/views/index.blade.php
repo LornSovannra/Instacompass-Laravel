@@ -55,7 +55,7 @@
                                         <img src="{{ $post -> user_post_profile_image }}" alt="">
                                         <div>
                                             <p>{{ $post -> user_post_name }}</p>
-                                            <p style="color: gray; font-size: 10px;">{{ $post -> user_post_date }}</p>
+                                            <p style="color: gray; font-size: 10px;">{{ $post -> user_post_date}}</p>
                                         </div>
                                     </div>
                                 </a>

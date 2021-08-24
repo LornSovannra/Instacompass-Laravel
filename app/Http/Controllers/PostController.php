@@ -20,7 +20,7 @@ class PostController extends Controller
         $date = Carbon::now();
         $date->toArray();
 
-        return view("index", ["auth" => $auth, "posts" => $posts, 'date' => $date]);
+        return view("index", ["auth" => $auth, "posts" => $posts, 'date' => $date -> toDayDateTimeString()]);
     }
 
     public function Profile()
@@ -94,6 +94,7 @@ class PostController extends Controller
         $post -> user_post_id = Auth::id();
         $post -> user_post_name = $request -> user_post_name;
         $post -> user_post_caption = $request -> user_post_caption;
+        $post -> user_post_date = $request -> user_post_date;
         if($request->file('user_post_image') != null)
         {
             $post -> user_post_image = $image_url;
