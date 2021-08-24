@@ -124,6 +124,7 @@ class UserController extends Controller
     public function UserPostProfile($id)
     {
         $user = User::findOrFail($id);
+        
         $auth = Auth::user();
 
         if($id == Auth::id())
@@ -133,7 +134,7 @@ class UserController extends Controller
             return redirect("profile");
         }else{
             $posts = DB::select('SELECT * FROM posts WHERE user_post_id = ? ORDER BY id DESC', [$id]);
-    
+
             return view("user-post-profile", ['user' => $user, "auth" => $auth, "posts" => $posts]);
         }
 
