@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use Carbon\Carbon;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +18,10 @@ class PostController extends Controller
         $auth = Auth::user();
         $posts = Post::all() -> sortDesc();
 
-        return view("index", ["auth" => $auth, "posts" => $posts]);
+        $date = new DateTime();
+        $date->format('Y-m-d H:i:s');
+
+        return view("index", ["auth" => $auth, "posts" => $posts, "date" => $date]);
     }
 
     public function Profile()

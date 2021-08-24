@@ -55,7 +55,7 @@
                                         <img src="{{ $post -> user_post_profile_image }}" alt="">
                                         <div>
                                             <p>{{ $post -> user_post_name }}</p>
-                                            <p style="color: gray; font-size: 10px;">{{ $post -> user_post_date }} {{-- MINUTES AGO --}}</p>
+                                            <p style="color: gray; font-size: 10px;">{{ $post -> user_post_date }}</p>
                                         </div>
                                     </div>
                                 </a>
@@ -66,6 +66,7 @@
                             <div class="caption-date">
                                 {{-- <div class="date">
                                 </div> --}}
+                                {{ $date }}
                                 <div class="caption" style="padding: 1em 0 0 0;">
                                     <p>{{ $post -> user_post_caption }}</p>
                                 </div>
@@ -164,6 +165,7 @@
                         <textarea name="user_post_caption" placeholder="What's on your mind, {{ $auth -> name }}?"></textarea>
                     </div>
                     <input name="user_post_name" type="text" hidden value="{{ $auth -> name }}">
+                    <input name="user_post_date" type="text" hidden value="{{ $date }}">
                     <input name="user_post_image" class="input_post_upload_photo" type="file" hidden>
                     <input name="user_post_profile_image" type="text" hidden value="{{ $auth -> user_profile_image }}">
                     <div class="post_upload_photo">
