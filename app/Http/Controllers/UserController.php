@@ -11,6 +11,16 @@ use JD\Cloudder\Facades\Cloudder;
 
 class UserController extends Controller
 {
+    public function Login()
+    {
+        return view("login");
+    }
+
+    public function Register()
+    {
+        return view("register");
+    }
+
     public function UpdateProfile(Request $request)
     {
         $request -> validate([
