@@ -66,7 +66,6 @@
                             <div class="caption-date">
                                 {{-- <div class="date">
                                 </div> --}}
-                                {{ $date }}
                                 <div class="caption" style="padding: 1em 0 0 0;">
                                     <p>{{ $post -> user_post_caption }}</p>
                                 </div>

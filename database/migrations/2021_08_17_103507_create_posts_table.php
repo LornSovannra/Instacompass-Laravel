@@ -21,7 +21,7 @@ class CreatePostsTable extends Migration
             $table->string("user_post_caption");
             $table->string("user_post_image") -> nullable();
             $table->string("user_post_profile_image");
-            $table->string("user_post_date")->nullable();
+            $table->string("user_post_date");
             $table->integer("is_user_post_delete");
         });
     }
