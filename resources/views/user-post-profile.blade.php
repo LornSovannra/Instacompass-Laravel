@@ -33,7 +33,7 @@
                         <a href=""><i class="far fa-compass"></i></a>
                         <a href=""><i class="far fa-heart"></i></a>
                         <ul class="menu_profile">
-                            <div class="menu_profile_image"><img src="{{ $auth -> user_profile_image }}" alt="Profile"></div>
+                            <div class="menu_profile_image"><img src="../{{ $auth -> user_profile_image }}" alt="Profile"></div>
                             <ul class="profile_span">
                                 <li><a href="{{ route("profile") }}"><i class="far fa-user-circle"></i> Profile</a></li>
                                 <li><a href=""><i class="far fa-bookmark"></i> Saved</a></li>
@@ -59,7 +59,7 @@
             <div class="profile_wrapper">
                 <div class="profile">
                     <div class="profile_left">
-                        <img src="{{ $user -> user_profile_image }}" alt="">
+                        <img src="../{{ $user -> user_profile_image }}" alt="">
                     </div>
                     <div class="profile_right">
                         <div class="profile_right_top">
@@ -101,7 +101,7 @@
                         <div class="card-top">
                             <a style="text-decoration: none; color: black;" href="{{-- {{ route("user.post.profile", $post -> user_post_id) }} --}}">
                                 <div class="card-top-left">
-                                    <img src="{{ $post -> user_post_profile_image }}" alt="">
+                                    <img src="../{{ $post -> user_post_profile_image }}" alt="">
                                     <div>
                                         <p>{{ $post -> user_post_name }}</p>
                                         <p style="color: gray; font-size: 10px;">{{ $post -> user_post_date}}</p>
