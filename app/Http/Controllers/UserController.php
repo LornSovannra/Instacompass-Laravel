@@ -83,16 +83,16 @@ class UserController extends Controller
             $image_url = Cloudder::show(Cloudder::getPublicId(), [/* "width" => $width, "height" => $height,  */"quality" => 90, "secure" => "true"]);
 
             //In a situation where the user has already uploaded a file we could use the delete method to remove the media and upload a new one.
-            /* if ($public_id != null) {
+            if ($public_id != null) {
                 $image_public_id_exist = User::select('public_id')->where('id', Auth::id())->get();
                 Cloudder::delete($image_public_id_exist);
-            } */
+            }
 
             $user -> user_profile_image = $image_url;
 
             DB::table('posts')  -> where("user_post_id", $auth_id)
                             -> update([
-                                "user_post_profile_image" => $image_url/* $request -> user_profile_image -> store("users_profile_images") */
+                                "user_post_profile_image" => $image_url
                             ]);
 
             $user = User::find(Auth::id());
@@ -113,7 +113,7 @@ class UserController extends Controller
 
         DB::table('posts')  -> where("user_post_id", $auth_id)
                             -> update([
-                                "user_post_profile_image" => 'users_profile_images/default_profile_image.png'/* $request -> user_profile_image -> store("users_profile_images") */
+                                "user_post_profile_image" => 'users_profile_images/default_profile_image.png'
                             ]);
 
         $user -> save();

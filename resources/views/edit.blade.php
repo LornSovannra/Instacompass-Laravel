@@ -91,17 +91,18 @@
                     <div class="upload_photo">
                         <input class="input_upload_photo" hidden name="user_profile_image" type="file">
                         <p>Upload Photo</p>
-                        <button type="submit" class="btn_upload_photo" hidden name="btn_upload_photo"">Upload</button>
+                        <button type="submit" class="btn_upload_photo" hidden name="btn_upload_photo">Upload</button>
                     </div>
                     @csrf
                     @method("PUT")
                 </form>
-                {{-- <form action="{{ route("remove.profile.image") }}" method="post">
+                <form action="{{ route("remove.profile.image") }}" method="post">
+                    @csrf
                     @method("PUT")
                     <div class="remove_current_photo">
-                        <button type="submit" class="btn_remove_photo" name="btn_remove_photo" formaction="{{ route("remove.profile.image") }}">Remove Current Photo</button>
+                        <button type="submit" class="btn_remove_photo" name="btn_remove_photo">Remove Current Photo</button>
                     </div>
-                </form> --}}
+                </form>
                 <div class="cancel">
                     <p>Cancel</p>
                 </div>
