@@ -80,7 +80,7 @@ class UserController extends Controller
             $height = 1024; */
 
             //The show method returns the URL of the media file on Cloudinary
-            $image_url = Cloudder::show(Cloudder::getPublicId(), [/* "width" => $width, "height" => $height,  */"quality" => 90, "secure" => "true"]);
+            $image_url = Cloudder::show(Cloudder::getPublicId(), [/* "width" => $width, "height" => $height,  *//* "quality" => 90, "secure" => "true" */]);
 
             //In a situation where the user has already uploaded a file we could use the delete method to remove the media and upload a new one.
             if ($public_id != null) {
@@ -137,15 +137,5 @@ class UserController extends Controller
 
             return view("user-post-profile", ['user' => $user, "auth" => $auth, "posts" => $posts]);
         }
-
     }
-
-    /* public function findAction(\Illuminate\Http\Request $request) {
-        if ($request->has('update.profile.image')) {
-            return $this->dispatch(new \App\Jobs\UpdateProfileImage($request));
-        } else if ($request->has('remove.profile.image')) {
-            return $this->dispatch(new \App\Jobs\RemoveProfileImage($request));
-        }
-        return 'no action found';
-    } */
 }

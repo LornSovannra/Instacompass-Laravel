@@ -23,6 +23,19 @@ class PostController extends Controller
         return view("index", ["auth" => $auth, "posts" => $posts, 'date' => $date -> toDayDateTimeString()]);
     }
 
+    public function Search(Request $request)
+    {
+        $auth = Auth::user();
+        $posts = Post::all() -> sortDesc();
+
+        $auth_name = $auth -> name;
+        
+        $search = $request -> search;
+        $users_search_result = DB::select("SELECT * FROM users WHERE name LIKE '%$search%'/*  AND name NOT LIKE '$auth_name' */ LIMIT 10");
+
+        return view("search", ["auth" => $auth, "posts" => $posts, "users_search_result" => $users_search_result]);
+    }
+
     public function Profile()
     {
         $auth = Auth::user();

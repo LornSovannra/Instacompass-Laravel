@@ -39,6 +39,11 @@ header{
     display: none;
 }
 
+#search button{
+    background: none;
+    border: none;
+}
+
 #menu{
     display: flex;
 }

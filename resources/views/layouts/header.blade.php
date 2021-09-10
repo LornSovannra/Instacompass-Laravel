@@ -5,10 +5,11 @@
         </a>
     </div>
     <div id="search">
-        <div class="search-wrapper">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search">
-        </div>
+        <form class="search-wrapper" action="{{ route("search.user.profile") }}" method="GET">
+            @csrf
+            <input type="text" name="search" placeholder="Search">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
     </div>
     <div id="menu-wrapper">
         <div id="menu">
