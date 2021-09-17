@@ -9,6 +9,7 @@ header{
     background: white;
     position: sticky;
     top: 0;
+    z-index: 999;
 }
 
 .header-wrapper{

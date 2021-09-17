@@ -75,10 +75,10 @@
                             </div>
                             <div class="card-bottom">
                                 <div class="card-bottom-left">
-                                    <div>
-                                        <i class="far fa-heart"></i>
-                                        <i class="far fa-comment"></i>
-                                        <i class="fab fa-telegram-plane"></i>
+                                    <div class="like_comment_share">
+                                        <div class="like_dislike"><i class="far fa-heart"></i></div>
+                                        <div class="commenting"><i class="far fa-comment"></i></div>
+                                        <div class="share"><i class="fab fa-telegram-plane"></i></div>
                                     </div>
                                 </div>
                                 <div class="card-bottom-right">
@@ -193,6 +193,5 @@
         </div>
         <!-- End Post Detaails -->
     </main>
-
 </body>
 </html>
