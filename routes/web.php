@@ -4,9 +4,9 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+/* Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return redirect('/');
-})->name('index');
+})->name('index'); */
 
 Route::get("/home", function(){
     return redirect("/");

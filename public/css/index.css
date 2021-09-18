@@ -10,6 +10,7 @@
             background: white;
             position: sticky;
             top: 0;
+            z-index: 9999;
         }
 
         .header-wrapper{
@@ -315,6 +316,10 @@
         .card-bottom-left{
             align-items: center;
             margin: 0 0 0 .7em;
+        }
+
+        .like_comment_share{
+            display: flex;
         }
 
         .card-bottom-left .fa-heart,
