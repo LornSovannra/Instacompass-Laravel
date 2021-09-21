@@ -49,3 +49,17 @@ const input_post_upload_photo = document.querySelector(".input_post_upload_photo
 post_upload_photo.addEventListener("click", () => {
     input_post_upload_photo.click();
 })
+
+const like_dislike = document.querySelector('.like_dislike');
+
+like_dislike.addEventListener('toggle', () => {
+    like_dislike.style.color = "red";
+    /* if(like_dislike.style.color = "black")
+    {
+        like_dislike.style.color = "red"
+    } */
+    /* else if(like_dislike.style.color = 'red')
+    {
+        like_dislike.style.color = "black"
+    } */
+});

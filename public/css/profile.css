@@ -9,7 +9,11 @@ header{
     background: white;
     position: sticky;
     top: 0;
+<<<<<<< HEAD
     z-index: 9999;
+=======
+    z-index: 999;
+>>>>>>> 48df9ee2cad9ca3c2aa97df4d60ce9ce4922727c
 }
 
 .header-wrapper{
