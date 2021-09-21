@@ -28,12 +28,14 @@ close_post_pop_up_wrapper.addEventListener("click", () => {
 /* End Post Pop Up */
 
 /* Post Details */
-let post_detail = document.querySelector(".card-top-right");
+let post_detail = document.querySelectorAll(".card-top-right");
 let post_details_wrapper = document.querySelector(".post-details-wrapper");
 const post_details_cancel = document.querySelector(".post-details-cancel");
 
-post_detail.addEventListener("click", () => {
-    post_details_wrapper.style.display = "flex";
+post_detail.forEach(button => {
+    button.addEventListener("click", () => {
+        post_details_wrapper.style.display = "flex";
+    })
 })
 
 post_details_cancel.addEventListener("click", () => {
