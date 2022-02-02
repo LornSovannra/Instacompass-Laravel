@@ -135,7 +135,9 @@ class UserController extends Controller
         }else{
             $posts = DB::select('SELECT * FROM posts WHERE user_post_id = ? ORDER BY id DESC', [$id]);
 
-            return view("user-post-profile", ['user' => $user, "auth" => $auth, "posts" => $posts]);
+            /* return view("user-post-profile", ['user' => $user, "auth" => $auth, "posts" => $posts]); */
+            //Or
+            return view("user-post-profile", compact('user', 'auth', 'posts'));
         }
     }
 }
